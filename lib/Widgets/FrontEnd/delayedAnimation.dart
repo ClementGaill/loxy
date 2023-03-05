@@ -23,7 +23,7 @@ class _DelayedAnimationState extends State<DelayedAnimation> with SingleTickerPr
 
     _controller = AnimationController(
       vsync: this, 
-      duration: const Duration(milliseconds: 1000)
+      duration: const Duration(milliseconds: 500)
     );
 
     final curve = CurvedAnimation(

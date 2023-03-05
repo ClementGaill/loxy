@@ -1,4 +1,5 @@
 // ignore_for_file: file_names, use_build_context_synchronously
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:loxy/Screens/AuthScreen/homeAuth.dart';
@@ -21,7 +22,7 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   _navigateAfterSplash() async {
-    await Future.delayed(const Duration(milliseconds: 3500), () {});
+    await Future.delayed(const Duration(milliseconds: 4500), () {});
 
     Navigator.push(context, PageTransition(child: const HomeAuth(), type: PageTransitionType.fade));
   }
@@ -30,15 +31,21 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: c_background,
-        body: Center(
-          child: DelayedAnimation(
-            delay: 1000, 
-            child: Text('LOXY', style: GoogleFonts.playfairDisplay(
-              fontSize: 45,
-              fontWeight: FontWeight.bold,
-              color: c_headline,
-            ),
-          ),
+      body: Center(
+        child: DelayedAnimation(
+          delay: 500, 
+          child: AnimatedTextKit(
+            animatedTexts: [
+              TypewriterAnimatedText(
+                'LOXY...',
+                textStyle: GoogleFonts.playfairDisplay(
+                fontSize: 45,
+                fontWeight: FontWeight.bold,
+                color: c_headline,                ),
+                speed: const Duration(milliseconds: 500),
+              ),
+            ],
+          )
         ),
       ),
     );

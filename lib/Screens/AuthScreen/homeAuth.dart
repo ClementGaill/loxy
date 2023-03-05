@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:loxy/Screens/AuthScreen/SignIn/loginMobile.dart';
+import 'package:loxy/Screens/AuthScreen/SignUp/signUp.dart';
 import 'package:page_transition/page_transition.dart';
 import '../../Widgets/FrontEnd/delayedAnimation.dart';
 import '../../Widgets/FrontEnd/reusableFrontVariables.dart';
@@ -43,11 +44,14 @@ class HomeAuth extends StatelessWidget {
                 width: double.infinity,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
+                    onPrimary: c_background,
                     backgroundColor: c_button,
                     shape: const StadiumBorder(),
                     padding: const EdgeInsets.all(5)
                   ),
-                  onPressed: () {}, 
+                  onPressed: () {
+                    Navigator.push(context, PageTransition(child: SignUp(), type: PageTransitionType.bottomToTop, duration: const Duration(milliseconds: 500)));
+                  }, 
                   child: Text(
                     'Inscription',
                     style: GoogleFonts.playfairDisplay(
@@ -65,6 +69,7 @@ class HomeAuth extends StatelessWidget {
                 width: double.infinity,
                 child: OutlinedButton(
                   style: OutlinedButton.styleFrom(
+                    primary: c_background,
                     foregroundColor: c_button, side: const BorderSide(
                       color: c_button, 
                       width: 5,
@@ -73,7 +78,7 @@ class HomeAuth extends StatelessWidget {
                     padding: const EdgeInsets.all(5)
                   ),
                   onPressed: () {
-                    Navigator.push(context, PageTransition(child: SignIn(), type: PageTransitionType.bottomToTop));
+                    Navigator.push(context, PageTransition(child: SignIn(), type: PageTransitionType.bottomToTop, duration: const Duration(milliseconds: 500)));
                   }, 
                   child: Text(
                     'Connexion',
