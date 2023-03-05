@@ -1,5 +1,6 @@
+// ignore_for_file: use_key_in_widget_constructors
 import 'package:flutter/material.dart';
-import 'Widgets/FrontEnd/delayed_animation.dart';
+import 'package:loxy/Screens/splashScreen.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,11 +12,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Loxy',
-      home: Scaffold(
-        body: Center(
-          child: DelayedAnimation(delay: 1000, child: FlutterLogo(size: 200,)),
-        ),
-      ),
+      home: SplashScreen()
     );
   }
 }
